@@ -1,0 +1,48 @@
+.my-plants-info {
+    width: 50%;
+    min-height: 400px;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-color: var(--bg_light);
+    box-shadow: var(--shadow);
+    padding: 1rem;
+
+    > * {
+        width: 100%;
+        display: flex;
+    }
+
+    .title {
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .icons {
+        justify-content: space-evenly;
+        gap: 0.5rem;
+        
+        >* {
+            display: flex;
+            align-items: center;
+        }
+
+        .icon {
+            height: 100%;
+            max-height: 20px;
+            margin: 0 0.5rem;
+        }
+    }
+
+    .notes {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .buttons {
+        justify-content: end;
+        margin-top: auto;
+        margin-left: auto;
+    }
+}

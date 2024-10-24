@@ -1,0 +1,25 @@
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background-color: var(--bg_light);
+    border-radius: 3px;
+    gap: 1rem;
+
+    .loading-leaf {
+        width: 30px;
+        height: auto;
+        animation: leaf 5s linear infinite;
+    }
+}
+
+@keyframes leaf {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+        transform: rotateZ(360deg);
+    }
+}

@@ -1,0 +1,15 @@
+.search-result {
+    background-color: var(--bg_light);
+    padding-top: 5rem;
+    text-align: center;
+    
+    .search-text {
+        margin-bottom: 2rem;
+    }
+
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        gap: 1.5rem;
+    }
+}

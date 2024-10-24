@@ -1,0 +1,53 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--overlay_dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+
+    .modal-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: var(--bg_light);
+        padding: 1.5rem;
+        gap: 0.8rem;
+        border-radius: 8px;
+        min-width: 300px;
+        max-width: 900px;
+
+        .modal-header {
+            width: 100%;
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .modal-button {
+            margin-top: 1rem;
+        }
+
+        .modal-search {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 0.7rem;
+            margin: 1.5rem 0;
+
+            .plant-card {
+                .card-text {
+                    padding: 0.2rem;
+                    font-size: 1.5rem;
+                }
+                .text-overlay {
+                    font-size: 0.7rem;
+                }
+            }
+        }
+    }
+}

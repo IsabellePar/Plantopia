@@ -1,0 +1,76 @@
+.plant-card {
+    grid-column: span 2;
+    background-color: var(--bg_light);
+    box-shadow: var(--shadow_light);
+    border-radius: 3px;
+    aspect-ratio: 1 / 1.25;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    .img-container {
+        display: grid;
+        grid-template-areas: "overlay";
+        padding: 4%;
+        padding-bottom: 2%;
+        filter: sepia(0.2);
+
+        .card-img {
+            grid-area: overlay;
+            width: 100%;
+            object-fit: cover;
+            aspect-ratio: 1 / 1;
+        }
+
+        .overlay {
+            grid-area: overlay;
+            background-color: var(--overlay_dark);
+            color: var(--text_light);
+            padding: 0.2rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+
+            &.overlay-text {
+                p {
+                    font-size: 0.7rem;
+
+                    &:first-child {
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+    }
+
+    .card-text {
+        text-align: center;
+        padding: 0.2rem;
+        
+        p {
+            font-size: 1.5rem;
+        }
+    }
+
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: var(--shadow);
+
+        .overlay {
+            opacity: 1;
+        }
+    }
+
+    &.large {
+        width: 30%;
+        margin: 4% -5rem 0 0;
+        box-shadow: var(--shadow);
+        transform: rotateZ(-10deg);
+        align-self: flex-start;
+        cursor: auto;
+
+        .card-text {
+            p {
+                font-size: 1.8rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,47 @@
+.plant-details {
+    flex-direction: row;
+
+    .details-content {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        width: 100%;
+        background-color: var(--bg_light);
+        box-shadow: var(--shadow);
+        border-radius: 3px;
+        padding: 3rem 5%;
+        white-space: pre-line;
+
+        .details-description {
+            margin: 1rem 0;
+            > p {
+                width: 80%;
+                margin: 0.5rem auto;
+                line-height: 1.3rem;
+            }
+        }
+
+        .details-care,
+        .details-tags {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+
+            p {
+                font-size: small;
+            }
+
+            img {
+                height: 30%;
+                max-height: 50px;
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        button {
+            margin-left: auto;
+            margin-top: auto;
+        }
+    }
+}

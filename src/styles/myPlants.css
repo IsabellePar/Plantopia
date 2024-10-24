@@ -1,0 +1,58 @@
+.my-plants {
+    flex-direction: column;
+    gap: 3rem;
+
+    & > div {
+        display: flex;
+        justify-content: space-between;
+        gap: 1.5rem;
+    }
+
+    h1 {
+        color: var(--text_light);
+    }
+
+    .my-plants-content {
+
+        .my-plants-list {
+            width: 50%;
+            height: 70vh;
+            border-radius: 3px;
+        }
+
+        .my-plants-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            padding-top: 0;
+
+            .my-plant-item {
+                display: flex;
+                height: 70px;
+                background-color: var(--bg_light);
+                box-shadow: var(--shadow_light);
+                border-radius: 3px;
+                cursor: pointer;
+
+                img {
+                    height: 100%;
+                    aspect-ratio: 1 / 1;
+                    border-radius: 3px 0 0 3px;
+                }
+
+                .text {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    padding: 0.5rem;
+                    text-align: left;
+                }
+
+                .buttons {
+                    margin: auto;
+                    margin-right: 0.5rem;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,36 @@
+.header {
+    position: fixed;
+    z-index: 100;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    padding: 1rem 2rem 0.5rem 2rem;
+    gap: 1.5rem;
+    background-color: var(--overlay_dark);
+
+    a {
+        color: var(--text_light_inactive);
+
+        &:hover {
+            color: var(--primary_green_light);
+        }
+
+        &.active {
+            color: var(--text_light);
+        }
+
+        &:first-child {
+            margin-right: auto;
+            color: var(--text_light);
+        }
+    }
+
+    .logo {
+        
+        img {
+            margin-bottom: -1.2rem;
+            height: 100%;
+        }
+    }
+}

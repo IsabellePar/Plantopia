@@ -1,0 +1,146 @@
+.dashboard {
+    flex-direction: column;
+
+    .dashboard-tabs {
+        display: flex;
+        gap: 0.3rem;
+
+        a {
+            color: var(--text_dark);
+            background-color: #d6d2cb;
+            box-shadow: var(--shadow);
+            border-radius: 5px 5px 0 0;
+            padding: 0.4rem 1rem 0.2rem 1rem;
+            font-size: 0.9rem;
+
+            &:hover {
+                background-color: var(--primary_green_light);
+            }
+
+            &.active {
+                background-color: var(--bg_light);
+            }
+        }
+    }
+
+    .tab-content {
+        min-height: 60vh;
+        background-color: var(--bg_light);
+        box-shadow: var(--shadow);
+        border-radius: 0 5px 5px 5px;
+        padding: 3rem 4rem 4rem 6rem;
+
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        h2 {
+            text-transform: uppercase;
+        }
+
+        .dashboard-text {
+            width: 100%;
+            padding: 1rem 5rem;
+        }
+
+        .header-row {
+            background-color: var(--primary_green_light);
+            text-transform: capitalize;
+        }
+
+        .calendar {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+
+            .month-header {
+                width: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                gap: 1rem;
+
+                .arrow:hover {
+                    cursor: pointer;
+                }
+            }
+
+            .month-content {
+                display: flex;
+                align-items: start;
+                justify-content: space-evenly;
+                position: relative;
+
+                .month-shape {
+                    background-color: var(--primary_green_light);
+                    border-radius: 20px;
+                    width: 40%;
+                    aspect-ratio: 1.4 / 1;
+                    position: absolute;
+                    left: 0px;
+                    top: 30px;
+                }
+
+                .month-image {
+                    width: 30%;
+                    aspect-ratio: 1 / 1;
+                    object-fit: cover;
+                    border-radius: 50%;
+                    filter: sepia(0.2);
+                    box-shadow: var(--shadow);
+                }
+
+                .month-text {
+                    max-width: 40%;
+                    display: flex;
+                    flex-direction: column;
+                    text-align: start;
+                    gap: 0.5rem;
+                }
+            }
+        }
+
+        .water-table {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            border: 1px solid var(--primary_green_light);
+            border-radius: 3px;
+
+            div {
+                border: 1px solid var(--primary_green_light);
+
+                h3 {
+                    padding: 0.5rem 0 0.3rem 0;
+                }
+            }
+        }
+
+        .light-table {
+            border-radius: 3px;
+            border: 1px solid var(--primary_green_light);
+
+            .row {
+                display: grid;
+                grid-template-columns: repeat(5, 1fr);
+                padding: 0.5rem 0 0.3rem 0;
+                border: 1px solid var(--primary_green_light);
+
+                .light-gradient {
+                    background: linear-gradient(
+                        to right,
+                        var(--btn_green_light),
+                        rgb(255, 226, 95)
+                    );
+                }
+
+                .light-other {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+    }
+}
