@@ -10,6 +10,7 @@ export default async function getPlantDetails(plant: IPlant) {
     );
 
     try {
+        console.log("Process is defined:", typeof process !== 'undefined');
         if (existingPlant) {
             return existingPlant;
         } else {
@@ -17,7 +18,7 @@ export default async function getPlantDetails(plant: IPlant) {
             const options = {
                 method: "GET",
                 headers: {
-                    "x-rapidapi-key": process.env.REACT_APP_API_KEY || '',
+                    "x-rapidapi-key": import.meta.env.VITE_API_KEY || '',
                     "x-rapidapi-host": "house-plants2.p.rapidapi.com",
                 },
             };
