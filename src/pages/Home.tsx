@@ -4,7 +4,7 @@ import "../styles/home.css";
 import PlantContext from "../contexts/PlantContext";
 import { IPlant } from "../interfaces";
 import { useNavigate } from "react-router-dom";
-import Logo from "../logo-lg.png";
+import Logo from "../assets/logo-lg.png";
 
 export default function Home() {
     const { allPlants } = useContext(PlantContext);

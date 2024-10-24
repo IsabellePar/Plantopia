@@ -5,7 +5,7 @@ export default function NotFound() {
         <section className="main-content bg-image">
             <section className="container not-found">
                 <h1 className="heading-text">Page not found</h1>
-                <img width="200px" src={notFound} />
+                <img width="100px" src={notFound} />
             </section>
         </section>
     );
