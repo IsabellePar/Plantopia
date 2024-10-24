@@ -5,8 +5,6 @@ import MyPlantDetails from "../components/MyPlantDetails";
 import PlantContext from "../contexts/PlantContext";
 import Modal, { ModalProps } from "../components/Modal";
 import AddEditForm from "../components/AddEditForm";
-import Edit from "../assets/edit.svg";
-import Delete from "../assets/delete.svg";
 import Add from "../assets/add.svg";
 
 export default function MyPlants() {
