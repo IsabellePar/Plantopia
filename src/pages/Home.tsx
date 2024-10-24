@@ -4,6 +4,7 @@ import "../styles/home.css";
 import PlantContext from "../contexts/PlantContext";
 import { IPlant } from "../interfaces";
 import { useNavigate } from "react-router-dom";
+import Logo from "../logo-lg.png";
 
 export default function Home() {
     const { allPlants } = useContext(PlantContext);
@@ -26,7 +27,7 @@ export default function Home() {
         <section className="main-content home">
             <section className="hero">
                 <div className="logo">
-                    <img className='logo-img' src="../logo-lg.png" alt="Logo" />
+                    <img className='logo-img' src={Logo} alt="Logo" />
                     <p className="hero-text">
                         Explore a wide variety of houseplants, discover care
                         tips, and track your personal plant collection - all in
