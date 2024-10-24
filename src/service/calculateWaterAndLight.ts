@@ -5,6 +5,8 @@ import { IMyPlant } from "../interfaces";
 export function getWateringFrequency(water: string): number {
     const waterArr = water?.split(/[&.]+/).map((desc) => desc.trim()) || water;
     const wateringMap: { [key: string]: number } = {
+        "water only when dry": 0.5,
+        "must dry between watering": 0.5,
         "can dry between watering": 1.5,
         "water when soil is half dry": 2.5,
         "keep moist between watering": 3.5,

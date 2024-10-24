@@ -77,10 +77,10 @@
                     background-color: var(--primary_green_light);
                     border-radius: 20px;
                     width: 40%;
-                    aspect-ratio: 1.4 / 1;
+                    aspect-ratio: 1.2 / 1;
                     position: absolute;
                     left: 0px;
-                    top: 30px;
+                    top: 20px;
                 }
 
                 .month-image {

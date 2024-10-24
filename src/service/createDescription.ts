@@ -33,6 +33,7 @@ export function createDescription(plant: IPlant) {
     const width = plant.width
         ? `spreading to a potential width of ${plant.width} cm`
         : "";
+    const temp = plant.minTemp && plant.maxTemp ? ` ranging from ${plant.minTemp} to ${plant.maxTemp}` : plant.minTemp || plant.maxTemp ? ` around ${plant.minTemp || plant.maxTemp}` : ' that are similar to this'
     const insects = plant.insects && plant.insects.length > 0
         ? ` insects such as ${formatList(plant.insects)}`
         : "";
@@ -43,8 +44,8 @@ export function createDescription(plant: IPlant) {
     // Description text
     return `${plant.commonName}${otherNames} belongs to the family ${plant.family}${appeal}. ${plant.leafColor ? leafColor : bloomColor}${use} 
     
-    The ${plant.commonName} plant has a ${style}${growth}${
-        height && width ? `${height} and ${width}` : height || width}. Native to ${plant.climate} climates, it thrives in temperatures ranging from ${plant.minTemp}°C to ${plant.maxTemp}°C.
+    The ${plant.commonName} has a ${style}${growth}${
+        height && width ? `${height} and ${width}` : height || width}. Native to ${plant.climate} climates, it thrives in temperatures! ranging from ${plant.minTemp}°C to ${plant.maxTemp}°C.
     
     Threats related to these plants are${insects && disease ? `${insects}, as well as ${disease}`
             : insects || disease || " rare"

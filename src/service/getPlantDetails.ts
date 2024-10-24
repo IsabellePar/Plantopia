@@ -10,7 +10,6 @@ export default async function getPlantDetails(plant: IPlant) {
     );
 
     try {
-        console.log("Process is defined:", typeof process !== 'undefined');
         if (existingPlant) {
             return existingPlant;
         } else {
