@@ -9,7 +9,18 @@
 
     .card-container {
         display: grid;
-        grid-template-columns: repeat(10, 1fr);
+        grid-template-columns: repeat(5, 1fr);
         gap: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .search-result {
+        padding: 3rem 0.5rem;
+        
+        .card-container {
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+        }
     }
 }

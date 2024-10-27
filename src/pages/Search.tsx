@@ -120,7 +120,7 @@ export default function Search() {
                                 </option>
                             ))}
                         </select>
-                        <button className="icon-btn" type='button' onClick={clearFilters}>
+                        <button className="icon-btn clear" type='button' onClick={clearFilters}>
                             <img src={Clear} alt='Clear'/>
                         </button>
                     </div>
