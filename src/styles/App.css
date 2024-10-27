@@ -149,3 +149,8 @@ button {
     padding: 5rem;
 }
 
+@media screen and (max-width: 600px) {
+    .main-content {
+        padding: 7rem 0.8rem;
+    }
+}

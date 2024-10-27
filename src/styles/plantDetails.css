@@ -45,3 +45,9 @@
         }
     }
 }
+
+@media screen and (max-width: 600px) {
+    .plant-details {
+        flex-direction: column;
+    }
+}

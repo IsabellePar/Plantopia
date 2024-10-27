@@ -74,3 +74,13 @@
         }
     }
 }
+
+@media screen and (max-width: 600px) {
+    .plant-card {
+        &.large {
+            margin: 0 auto -1rem auto;
+            width: 70%;
+            transform: rotate(-5deg);
+        }
+    }
+}
