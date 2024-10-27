@@ -56,7 +56,7 @@
             gap: 2rem;
 
             .month-header {
-                width: 50%;
+                width: 400px;
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
@@ -139,6 +139,47 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .dashboard {
+        .dashboard-tabs > a {
+            text-align: center;
+            width: 100%;
+        }
+
+        .tab-content {
+            padding: 2rem;
+            border-radius: 0 0 5px 5px;
+
+            .calendar {
+                .month-header {
+                    width: 100%;
+                }
+
+                .month-content {
+                    width: 100%;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 2rem;
+                    margin-bottom: 3rem;
+
+                    .month-shape {
+                        display: none;
+                    }
+
+                    .month-image {
+                        width: 50%;
+                    }
+
+                    .month-text {
+                        max-width: 100%;
+                        text-align: center;
+                    }
                 }
             }
         }
