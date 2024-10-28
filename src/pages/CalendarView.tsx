@@ -27,14 +27,18 @@ export default function CalendarView() {
         const highNeedsMonths = [0, 1, 2, 3, 8, 9, 10, 11];
         const mediumNeedsMonths = [0, 1, 10, 11];
         const lowNeedsMonths = [4, 5, 6, 7];
-    
-        const filterPlantsByLightNeeds = (min: number, max: number) => myPlants.filter((plant) => {
+
+        const filterPlantsByLightNeeds = (min: number, max: number) =>
+            myPlants.filter((plant) => {
                 const { minIndex, maxIndex } = getLightIndexes(plant);
                 return minIndex >= min && maxIndex === max;
             });
-        if (highNeedsMonths.includes(currentIndex)) return filterPlantsByLightNeeds(2, 2);
-        if (lowNeedsMonths.includes(currentIndex)) return filterPlantsByLightNeeds(0, 1); 
-        if (mediumNeedsMonths.includes(currentIndex)) return filterPlantsByLightNeeds(1, 2); 
+        if (highNeedsMonths.includes(currentIndex))
+            return filterPlantsByLightNeeds(2, 2);
+        if (lowNeedsMonths.includes(currentIndex))
+            return filterPlantsByLightNeeds(0, 1);
+        if (mediumNeedsMonths.includes(currentIndex))
+            return filterPlantsByLightNeeds(1, 2);
         return [];
     };
 
@@ -53,10 +57,9 @@ export default function CalendarView() {
                     <img src={Right} alt="Right" />
                 </button>
             </div>
-            <hr/>
+            <hr />
             <div className="month-content">
-                <div className="month-shape"></div>
-                <img className="month-image" src={currentMonth.img} />
+                    <img className="month-image" src={currentMonth.img} />
                 <div className="month-text">
                     <h3 className="title-text">Light & water needs</h3>
                     <p>
@@ -64,11 +67,19 @@ export default function CalendarView() {
                     </p>
                     <p>{currentMonth.additional}</p>
                     <p></p>
-                    <h3 className="title-text">Plants to take extra care of during {currentMonth.month}</h3>
+                    <h3 className="title-text">
+                        Plants to take extra care of during {currentMonth.month}
+                    </h3>
                     {extraCarePlants.length > 0 ? (
                         extraCarePlants.map((plant, i) => (
                             <p key={i}>{plant.commonName}</p>
-                        ))) : <p>All your plants are thriving at the moment - enjoy their vibrant growth!</p>}
+                        ))
+                    ) : (
+                        <p>
+                            All your plants are thriving at the moment - enjoy
+                            their vibrant growth!
+                        </p>
+                    )}
                 </div>
             </div>
         </article>

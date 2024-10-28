@@ -30,6 +30,8 @@
             transition: all 0.3s ease;
 
             &.overlay-text {
+                text-align: center;
+                
                 p {
                     font-size: 0.7rem;
 
@@ -46,7 +48,7 @@
         padding: 0.2rem;
         
         p {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
     }
 

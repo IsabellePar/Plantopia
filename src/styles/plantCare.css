@@ -71,17 +71,6 @@
                 display: flex;
                 align-items: start;
                 justify-content: space-evenly;
-                position: relative;
-
-                .month-shape {
-                    background-color: var(--primary_green_light);
-                    border-radius: 20px;
-                    width: 40%;
-                    aspect-ratio: 1.2 / 1;
-                    position: absolute;
-                    left: 0px;
-                    top: 20px;
-                }
 
                 .month-image {
                     width: 30%;
@@ -91,7 +80,7 @@
                     filter: sepia(0.2);
                     box-shadow: var(--shadow);
                 }
-
+                
                 .month-text {
                     max-width: 40%;
                     display: flex;

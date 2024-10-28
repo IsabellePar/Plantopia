@@ -8,8 +8,10 @@
     }
 
     .card-container {
+        width: 100%;
         display: grid;
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-auto-rows: auto;
         gap: 1.5rem;
     }
 }
@@ -17,10 +19,5 @@
 @media screen and (max-width: 600px) {
     .search-result {
         padding: 3rem 0.5rem;
-        
-        .card-container {
-            grid-template-columns: 1fr 1fr;
-            gap: 0.5rem;
-        }
     }
 }

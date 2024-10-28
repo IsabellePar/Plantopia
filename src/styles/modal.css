@@ -35,7 +35,7 @@
 
         .modal-search {
             display: grid;
-            grid-template-columns: repeat(10, 1fr);
+            grid-template-columns: repeat(5, 1fr);
             gap: 0.7rem;
             margin: 1.5rem 0;
 

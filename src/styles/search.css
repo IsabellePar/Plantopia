@@ -29,6 +29,11 @@
 
             .clear {
                 padding: 0;
+                
+                img {
+                    height: 30px;
+                    margin: 0 0 -0.2rem 0.5rem;
+                }
             }
         }
     }
