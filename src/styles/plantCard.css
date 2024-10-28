@@ -1,6 +1,6 @@
 .plant-card {
     grid-column: span 1;
-    background-color: white;
+    background-color: var(--bg_light);
     box-shadow: var(--shadow_light);
     border-radius: 3px;
     aspect-ratio: 1 / 1.25;

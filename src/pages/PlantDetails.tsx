@@ -17,9 +17,10 @@ import PlantContext from "../contexts/PlantContext";
 export default function PlantDetails() {
     const { id } = useParams();
     const { myPlants, setMyPlants, allPlants } = useContext(PlantContext);
+    const selectedMyPlantRef = useRef<HTMLSelectElement>(null);
     const [details, setDetails] = useState<IPlant>();
     const [loading, setLoading] = useState<boolean>(false);
-    const selectedMyPlantRef = useRef<HTMLSelectElement>(null);
+    const [highlight, setHighlight] = useState(false);
     const [modal, setModal] = useState<ModalProps>({
         title: "",
         children: null,
@@ -52,6 +53,10 @@ export default function PlantDetails() {
     // Formats the description text
     const description = details && createDescription(details);
 
+    setTimeout(() => {
+        setHighlight(false);
+    }, 1000);
+    
     // Adds current plant to MyPlants, then closes modal
     const addPlant = () => {
         if (!details) return;
@@ -80,6 +85,7 @@ export default function PlantDetails() {
             setMyPlants([...myPlants, plantData]);
         }
         setModal({ ...modal, isOpen: false }); 
+        setHighlight(true);
     };
 
     // Removes plant from My Plants, then closes modal
@@ -91,12 +97,11 @@ export default function PlantDetails() {
     // Opens modal to add or remove plant from My Plants
     const toggleAddRemove = () => {
         if (!details) return;
-        const action = isMyPlant ? "Remove" : "Add";
         setModal({
-            title: `${action === 'Add' ? 'Add to' : 'Remove from'} My Plants`,
+            title: `${isMyPlant ? 'Remove from' : 'Add to'} My Plants`,
             children: (
                 <>
-                    Do you want to {action.toLowerCase()} {details.commonName} {action === 'Add' ? 'to' : 'from'} My Plants?
+                    Do you want to {isMyPlant ? 'remove' : 'add'} {details.commonName} {isMyPlant ? 'from' : 'to'} My Plants?
                     {!isMyPlant && availableMyPlants.length > 0 && (
                         <div>
                             <p>Add as... </p>
@@ -118,7 +123,7 @@ export default function PlantDetails() {
             isOpen: true,
             onClose: () => setModal({ ...modal, isOpen: false }),
             onConfirm: isMyPlant ? removePlant : addPlant,
-            btnText: action,
+            btnText: isMyPlant ? 'Remove' : 'Add',
         });
     };
 

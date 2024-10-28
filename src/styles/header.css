@@ -18,6 +18,8 @@
 
         .header-navlink {
             color: var(--text_light_inactive);
+            transition: all 0.5s ease-out;
+            padding: 0.2rem 0.5rem;
 
             &:hover {
                 color: var(--primary_green_light);
@@ -25,6 +27,12 @@
 
             &.active {
                 color: var(--text_light);
+            }
+
+            &.highlight {
+                background-color: rgba(184, 255, 184, 0.479);
+                border-radius: 50px;
+                backdrop-filter: blur(10px);
             }
         }
     }

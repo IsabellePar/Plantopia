@@ -3,11 +3,19 @@ import "../styles/header.css";
 import Logo from "../assets/logo-sm.png";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
+import PlantContext from "../contexts/PlantContext";
 
 export default function Header() {
+    const { myPlants } = useContext(PlantContext);
     const [isOpen, setIsOpen] = useState(false);
+    const [highlight, setHighlight] = useState<boolean>(false);
+
+    useEffect(() => {
+        setHighlight(true);
+        const timer = setTimeout(() => setHighlight(false), 1500); 
+        return () => clearTimeout(timer);
+    }, [myPlants]);
 
     return (
         <nav className="header">
@@ -30,7 +38,7 @@ export default function Header() {
                     Plant care
                 </NavLink>
                 <NavLink
-                    className={`header-navlink ${isOpen ? "open" : ""}`}
+                    className={`header-navlink ${isOpen ? "open" : ""} ${highlight ? 'highlight' : ''}`}
                     to={"/my-plants"}
                     onClick={() => setIsOpen(false)}
                 >

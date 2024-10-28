@@ -28,11 +28,6 @@ export function PlantContextProvider({ children }: PlantProviderProps) {
     const storedMyPlants = localStorage.getItem('myPlants');
     const [myPlants, setMyPlants] = useState<IMyPlant[]>(storedMyPlants ? JSON.parse(storedMyPlants) : []);
 
-    // Saves MyPlants to LS upon update
-    useEffect(() => {
-        localStorage.setItem("myPlants", JSON.stringify(myPlants));
-    }, [myPlants]);
-
     // Gets all plants from data.json and converts them to IPlant before saving to context
     useEffect(() => {
         const plants: IPlant[] = plantData.map((p: any) => {
@@ -40,6 +35,11 @@ export function PlantContextProvider({ children }: PlantProviderProps) {
         });
         setAllPlants(plants);
     }, []);
+    
+    // Saves MyPlants to LS upon update
+    useEffect(() => {
+        localStorage.setItem("myPlants", JSON.stringify(myPlants));
+    }, [myPlants]);
 
     return (
         <PlantContext.Provider value={{ allPlants, setAllPlants, myPlants, setMyPlants }}>
